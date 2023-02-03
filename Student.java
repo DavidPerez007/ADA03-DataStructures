@@ -8,13 +8,16 @@ public class Student {
     private float avgGrade;
     private ArrayList<Course> courses = new ArrayList<>();
     
-
     public void calcularPromedio() {
         float sum = 0;
         for (Course course : courses) {
             sum += course.getGrade();
         }
         this.avgGrade = sum /= this.courses.size();
+    }
+
+    public float getAvg(){
+        return this.avgGrade;
     }
 
 }
