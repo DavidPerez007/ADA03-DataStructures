@@ -8,6 +8,17 @@ public class Student {
     private float avgGrade;
     private ArrayList<Course> courses = new ArrayList<>();
 
+    public Student(String name, String lastName){
+        this.avgGrade = 0;
+        this.name = name;
+        this.lastName = lastName;
+    }
+    public Student(String name, String lastName, float avg){
+        this.avgGrade = avg;
+        this.name = name;
+        this.lastName = lastName;
+    }
+
     public void calcularPromedio() {
         float sum = 0;
         for (Course course : courses) {
@@ -37,6 +48,7 @@ public class Student {
 
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
+        this.calcularPromedio();
     }
 
 }
